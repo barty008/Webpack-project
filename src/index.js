@@ -2,7 +2,7 @@ import loadHome from "./modules/home"
 import loadMenu from "./modules/menu"
 import pageLoad from "./modules/pageLoad"
 import contactLoad from "./modules/contact"
-initialize()
+// initialize()
 
 function navigationEvents() {
   const homeBtn = document.getElementById("homebtn")
@@ -19,9 +19,10 @@ function navigationEvents() {
 
 // loadMenu()
 
+pageLoad()
+loadMenu()
+// loadMenu()
 function initialize() {
-  pageLoad()
-  loadMenu()
   loadHome()
   navigationEvents()
 }

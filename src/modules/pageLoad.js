@@ -12,6 +12,7 @@ function createBtn(id, text) {
   const span = document.createElement("span")
   span.textContent = text
   btn.appendChild(span)
+  btn.classList.add("tab")
   return btn
 }
 function navBar(id) {

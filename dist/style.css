@@ -7,10 +7,40 @@
 img {
   width: 500px;
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+#content {
+  width: 80%;
+  text-align: center;
+}
 #header {
   color: blue;
 }
 #homebtn {
   background-color: aqua;
+}
+
+.not-active {
+  display: none;
+}
+#main {
+  background-color: lightcyan;
+}
+
+#footer {
+  background-color: lightblue;
+}
+
+#header {
+  background-color: lightgoldenrodyellow;
+}
+#header {
+  background-color: lightskyblue;
+}
+#nav {
+  background-color: lightgreen;
 }
