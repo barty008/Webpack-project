@@ -43,14 +43,44 @@ function createFooter(id, text) {
   return footer
 }
 
+function heroPicture(src, alt, description) {
+  const heroDiv = document.createElement("div")
+  const heroDescriptioin = document.createElement("h3")
+  heroDescriptioin.textContent = description
+
+  const imgHero = document.createElement("img")
+  imgHero.setAttribute("src", src)
+  imgHero.setAttribute("alt", alt)
+
+  heroDiv.appendChild(imgHero)
+  heroDiv.appendChild(heroDescriptioin)
+  return heroDiv
+}
+
 function pageLoad() {
   const content = document.getElementById("content")
+
   const header = createHeader("header", "Lovely Food")
   const nav = navBar("nav")
   const main = createMain("main")
-  const footer = createFooter("footer", "Have a Lovely Meal")
+  main.classList.add("active")
+
+  const mainImg = heroPicture(
+    "../src/img/Restrauntleung-poI7DelFiVA-unsplash.jpg",
+    "test",
+    "Description of hero picture"
+  )
+  const footer = createFooter("footer", "Copyright © 2023 Bartrum")
+  const gitHubLink = document.createElement("a")
+  gitHubLink.setAttribute("href", "https://github.com/barty008")
+  const githubLogo = document.createElement("i")
+  githubLogo.setAttribute("class", "fa-brands fa-github")
+  gitHubLink.appendChild(githubLogo)
+
+  footer.appendChild(gitHubLink)
   const sections = [nav, header, main, footer]
   sections.forEach((section) => content.appendChild(section))
+  main.appendChild(mainImg)
 }
 
 export default pageLoad

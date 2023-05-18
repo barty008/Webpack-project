@@ -1,28 +1,30 @@
 import loadHome from "./modules/home"
 import loadMenu from "./modules/menu"
 import pageLoad from "./modules/pageLoad"
-import contactLoad from "./modules/contact"
-// initialize()
+import loadContact from "./modules/contact"
+
+function initialize() {
+  pageLoad()
+
+  navigationEvents()
+}
+initialize()
 
 function navigationEvents() {
+  const main = document.getElementById("main")
+
   const homeBtn = document.getElementById("homebtn")
   const menuBtn = document.getElementById("menubtn")
   const contactBtn = document.getElementById("contactbtn")
 
   menuBtn.addEventListener("click", loadMenu)
   homeBtn.addEventListener("click", loadHome)
-  menuBtn.addEventListener("click", loadMenu)
-}
+  contactBtn.addEventListener("click", loadContact)
 
-// pageLoad()
-// loadHome()
-
-// loadMenu()
-
-pageLoad()
-loadMenu()
-// loadMenu()
-function initialize() {
-  loadHome()
-  navigationEvents()
+  const tabs = document.querySelectorAll(".tab")
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      main.classList.add("active")
+    })
+  })
 }
