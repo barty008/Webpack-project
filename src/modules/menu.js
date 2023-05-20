@@ -1,3 +1,5 @@
+import pageLoad from "./pageLoad"
+
 function createLovelyFoods(src, text, price, alt) {
   // append to
   const foodItem = document.createElement("div")
@@ -46,29 +48,21 @@ function loadMenu() {
       "test"
     ),
   ]
-  // foods.forEach((food) => main.appendChild(food))
-  // content
+
   const nextLogo = document.createElement("i")
   nextLogo.setAttribute("class", "fa-solid fa-chevron-right")
   main.appendChild(nextLogo)
-  const nextMenu = document.querySelectorAll("menu-pic")
-
-  //
-  const oneMenu = [...foods]
+  // main.appendChild(foods[0])
 
   let count = 0
+
   nextLogo.addEventListener("click", () => {
-    //
-    count++
-
-    // console.log(count)
-    // if (count === 1) {
-    //   main.appendChild(oneMenu[0])
-    // } else if (count === 2) {
-    //   main.appendChild(oneMenu[1])
-    // }
-
-    //
+    if (count < foods.length) {
+      main.appendChild(foods[count])
+      count++
+    } else {
+      count = 0
+    }
   })
 }
 

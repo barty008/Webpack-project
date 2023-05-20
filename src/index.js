@@ -5,7 +5,6 @@ import loadContact from "./modules/contact"
 
 function initialize() {
   pageLoad()
-
   navigationEvents()
 }
 initialize()
