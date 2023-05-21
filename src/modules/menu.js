@@ -1,26 +1,57 @@
 import pageLoad from "./pageLoad"
 
-function createLovelyFoods(src, text, price, alt) {
+function createLovelyFoods(h3, li1, li2, li3, li4, li5) {
   // append to
-  const foodItem = document.createElement("div")
-  //   picture
-  const foodPicture = document.createElement("img")
-  foodItem.setAttribute("class", "menu-details")
-  foodItem.setAttribute("class", "menu-details")
+  const menuContainer = document.createElement("div")
+  menuContainer.setAttribute("class", "menu-container")
+  menuContainer.style.width = "500px"
+  menuContainer.style.height = "400px"
+  // ul
+  const ulMenu = document.createElement("ul")
+  ulMenu.setAttribute("class", "ul-menu")
+  //   title
+  const menuTitle = document.createElement("h3")
+  menuTitle.setAttribute("class", "menu-title")
+  menuTitle.textContent = h3
 
-  foodPicture.setAttribute("src", src)
-  foodPicture.setAttribute("class", "menu-pic")
-  foodPicture.setAttribute("alt", alt)
-  const foodInfo = document.createElement("div")
-  const foodName = document.createElement("h3")
-  foodName.textContent = text
-  const foodPrice = document.createElement("h2")
-  foodPrice.textContent = price
-  foodInfo.appendChild(foodName)
-  foodInfo.appendChild(foodPrice)
-  foodItem.appendChild(foodPicture)
-  foodItem.appendChild(foodInfo)
-  return foodItem
+  // liOne
+  const liMenuOne = document.createElement("li")
+  liMenuOne.setAttribute("class", "menu-list")
+  liMenuOne.textContent = li1
+  // liTwo
+  const liMenuTwo = document.createElement("li")
+  liMenuTwo.setAttribute("class", "menu-list")
+  liMenuTwo.textContent = li2
+  // liThree
+  const liMenuThree = document.createElement("li")
+  liMenuThree.setAttribute("class", "menu-list")
+  liMenuThree.textContent = li3
+  // liFour
+  const liMenuFour = document.createElement("li")
+  liMenuFour.setAttribute("class", "menu-list")
+  liMenuFour.textContent = li4
+  // liFive
+  const liMenuFive = document.createElement("li")
+  liMenuFive.setAttribute("class", "menu-list")
+  liMenuFive.textContent = li5
+
+  // li > ul
+  const menuList = [
+    menuTitle,
+    liMenuOne,
+    liMenuTwo,
+    liMenuThree,
+    liMenuFour,
+    liMenuFive,
+  ]
+  menuList.forEach((list) => {
+    ulMenu.appendChild(list)
+  })
+
+  // append to main menu div
+  menuContainer.appendChild(ulMenu)
+
+  return menuContainer
 }
 function loadMenu() {
   const main = document.getElementById("main")
@@ -30,41 +61,50 @@ function loadMenu() {
 
   const foods = [
     createLovelyFoods(
-      "../src/img/amit-lahav-3oDQKoKPMng-unsplash.jpg",
-      "£1",
-      "menu1",
-      "menu1"
+      "Breakfast",
+      "List-1",
+      "list-2",
+      "list-3",
+      "list-4",
+      "list-5"
     ),
     createLovelyFoods(
-      "../src/img/amit-lahav-3t07n27XK-w-unsplash.jpg",
-      "£1",
-      "Sweeties",
-      "test"
+      "Lunch",
+      "List-1",
+      "list-2",
+      "list-3",
+      "list-4",
+      "list-5"
     ),
     createLovelyFoods(
-      "../src/img/karsten-winegeart-PL5FZkW0Qkk-unsplash.jpg",
-      "£1",
-      "Sweeties",
-      "test"
+      "Dinner",
+      "List-1",
+      "list-2",
+      "list-3",
+      "list-4",
+      "list-5"
     ),
   ]
-
+  // next
   const nextLogo = document.createElement("i")
   nextLogo.setAttribute("class", "fa-solid fa-chevron-right")
   main.appendChild(nextLogo)
+  // previous
+  const previousLogo = document.createElement("i")
+  previousLogo.setAttribute("class", "fa-solid fa-chevron-left")
+  main.appendChild(previousLogo)
 
   //set width and height of slides
   let slide = document.createElement("div")
   slide.setAttribute("class", "slide")
-  slide.style.width = "550px"
-  slide.style.height = "450px"
+  slide.style.width = "500px"
+  slide.style.height = "400px"
   // main.appendChild(slide)
   let count = 0
   main.appendChild(slide)
   slide.appendChild(foods[2])
 
   nextLogo.onclick = () => {
-    //when btn2 is clicked
     slide.appendChild(foods[count])
     count++
     //add 1 to current index
@@ -76,8 +116,13 @@ function loadMenu() {
     }
     // slide = foods[count]
     slide.appendChild(foods[count])
-
     //set slide to current index
+  }
+  previousLogo.onclick = () => {
+    count--
+    if (count >= 0) {
+      slide.appendChild(foods[count])
+    }
   }
 }
 

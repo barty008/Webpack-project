@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 img {
@@ -98,6 +98,13 @@ h1 {
   bottom: 45%;
   cursor: pointer;
 }
+.fa-chevron-left {
+  font-size: 30px;
+  position: absolute;
+  left: 20%;
+  bottom: 45%;
+  cursor: pointer;
+}
 
 .menu-details {
 }
@@ -113,4 +120,15 @@ h1 {
   background-image: url(../src/img/menu\ background\ .jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.ul-menu {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -60,7 +60,7 @@ function heroPicture(src, alt, description) {
 function pageLoad() {
   const content = document.getElementById("content")
 
-  const header = createHeader("header", "Lovely Food")
+  const header = createHeader("header", "The Lovely Food Restaurant")
   const nav = navBar("nav")
   const main = createMain("main")
   main.classList.add("active")
