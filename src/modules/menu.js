@@ -32,8 +32,8 @@ function loadMenu() {
     createLovelyFoods(
       "../src/img/amit-lahav-3oDQKoKPMng-unsplash.jpg",
       "£1",
-      "Sweeties",
-      "test"
+      "menu1",
+      "menu1"
     ),
     createLovelyFoods(
       "../src/img/amit-lahav-3t07n27XK-w-unsplash.jpg",
@@ -52,18 +52,33 @@ function loadMenu() {
   const nextLogo = document.createElement("i")
   nextLogo.setAttribute("class", "fa-solid fa-chevron-right")
   main.appendChild(nextLogo)
-  // main.appendChild(foods[0])
 
+  //set width and height of slides
+  let slide = document.createElement("div")
+  slide.setAttribute("class", "slide")
+  slide.style.width = "550px"
+  slide.style.height = "450px"
+  // main.appendChild(slide)
   let count = 0
+  main.appendChild(slide)
+  slide.appendChild(foods[2])
 
-  nextLogo.addEventListener("click", () => {
-    if (count < foods.length) {
-      main.appendChild(foods[count])
-      count++
-    } else {
+  nextLogo.onclick = () => {
+    //when btn2 is clicked
+    slide.appendChild(foods[count])
+    count++
+    //add 1 to current index
+    if (count > foods.length - 1) {
+      // slide.appendChild(foods[count])
+      //if current index passes last photo in array
       count = 0
+      //set index back to zero
     }
-  })
+    // slide = foods[count]
+    slide.appendChild(foods[count])
+
+    //set slide to current index
+  }
 }
 
 export default loadMenu

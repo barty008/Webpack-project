@@ -108,3 +108,9 @@ h1 {
 
 /* #007800 -- green */
 /* #013656 -- knife handle */
+.slide {
+  overflow: hidden;
+  background-image: url(../src/img/menu\ background\ .jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
