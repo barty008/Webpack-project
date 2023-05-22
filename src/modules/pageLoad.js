@@ -2,6 +2,7 @@ function createHeader(id, text) {
   const header = document.createElement("header")
   header.setAttribute("id", id)
   const logo = document.createElement("h1")
+  logo.setAttribute("class", "header-title")
   logo.textContent = text
   header.appendChild(logo)
   return header
@@ -18,9 +19,9 @@ function createBtn(id, text) {
 function navBar(id) {
   const nav = document.createElement("nav")
   nav.setAttribute("id", id)
-  const homeBtn = createBtn("homebtn", "home")
-  const menuBtn = createBtn("menubtn", "menu")
-  const contactBtn = createBtn("contactbtn", "contact")
+  const homeBtn = createBtn("homebtn", "Home")
+  const menuBtn = createBtn("menubtn", "Menu")
+  const contactBtn = createBtn("contactbtn", "Contact")
 
   const buttons = [homeBtn, menuBtn, contactBtn]
   buttons.forEach((button) => nav.appendChild(button))
@@ -43,33 +44,35 @@ function createFooter(id, text) {
   return footer
 }
 
-function heroPicture(src, alt, description) {
+function heroPicture(title, subtitle) {
   const heroDiv = document.createElement("div")
-  const heroDescriptioin = document.createElement("h3")
-  heroDescriptioin.textContent = description
+  const heroTitle = document.createElement("h1")
+  const heroSubtitle = document.createElement("h2")
 
-  const imgHero = document.createElement("img")
-  imgHero.setAttribute("src", src)
-  imgHero.setAttribute("alt", alt)
+  heroDiv.setAttribute("class", "hero-container")
+  heroTitle.setAttribute("class", "hero-title")
+  heroSubtitle.setAttribute("class", "hero-subtitle")
+  heroTitle.textContent = title
+  heroSubtitle.textContent = subtitle
 
-  heroDiv.appendChild(imgHero)
-  heroDiv.appendChild(heroDescriptioin)
+  const heroInfo = [heroTitle, heroSubtitle]
+  heroInfo.forEach((el) => heroDiv.appendChild(el))
+
   return heroDiv
 }
 
 function pageLoad() {
   const content = document.getElementById("content")
 
-  const header = createHeader("header", "The Lovely Food Restaurant")
+  const header = createHeader("header", "Peels")
   const nav = navBar("nav")
   const main = createMain("main")
   main.classList.add("active")
-
-  const mainImg = heroPicture(
-    "../src/img/Restrauntleung-poI7DelFiVA-unsplash.jpg",
-    "test",
-    "Description of hero picture"
+  const mainDescription = heroPicture(
+    "Where Gastronomic Delights Unite with Timeless Elegance",
+    "Welcome to Peels, where culinary artistry meets impeccable elegance. Step into a world of refined indulgence, where every detail is carefully orchestrated to create an extraordinary dining experience."
   )
+
   const footer = createFooter("footer", "Copyright © 2023 Bartrum")
   const gitHubLink = document.createElement("a")
   gitHubLink.setAttribute("href", "https://github.com/barty008")
@@ -78,9 +81,9 @@ function pageLoad() {
   gitHubLink.appendChild(githubLogo)
 
   footer.appendChild(gitHubLink)
-  const sections = [nav, header, main, footer]
+  const sections = [header, nav, main, footer]
   sections.forEach((section) => content.appendChild(section))
-  main.appendChild(mainImg)
+  main.appendChild(mainDescription)
 }
 
 export default pageLoad

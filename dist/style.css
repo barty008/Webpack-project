@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,400&family=Roboto:ital,wght@0,700;1,400&family=Rubik:wght@400;500;700&display=swap");
-
 * {
   box-sizing: border-box;
   /* border: 1px solid black; */
@@ -9,11 +7,12 @@ img {
   width: 500px;
 }
 body {
+  font-family: "Cormorant Garamond", serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  background-image: url(../src//img/FINAL-backgroudlukas-blazek-f-TWhXOrLiU-unsplash.jpg);
+  background-image: url(../src/img/Main\ pic.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -21,20 +20,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+
   height: 100vh;
   width: 100%;
   position: relative;
 }
 #header {
-  color: blue;
+  color: rgb(83, 78, 78);
+  font-family: "Cormorant Garamond";
+  font-size: 1.4rem;
+  font-style: italic;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  /* text-decoration: overline solid black; */
+
+  letter-spacing: 2px;
+}
+.header-title {
+  width: 6rem;
+  border-bottom: 0.5px solid rgb(83, 78, 78);
+  border-top: 0.5px solid rgb(83, 78, 78);
 }
 
 .not-active {
   display: none;
-}
-#main {
-  background-color: lightcyan;
 }
 
 #footer {
@@ -45,17 +58,19 @@ body {
   height: 2.5rem;
 }
 
-#header {
-}
 #nav {
-  margin: 0 auto;
-  width: 60%;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-top: solid 0.5px rgb(83, 78, 78);
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 
 main {
   display: none;
+  height: 100%;
 }
 
 .active {
@@ -63,19 +78,12 @@ main {
 }
 
 .tab {
-  box-shadow: 0px 0px 0px 2px #013656;
-  background: linear-gradient(to bottom, #7892c2 5%, #013556 100%);
-  background-color: #7892c2;
-  border-radius: 10px;
-  border: 1px solid #4e6096;
+  all: unset;
   display: inline-block;
   cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 24px;
-  padding: 12px 37px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #283966;
+  color: black;
+  font-family: "Cormorant Garamond";
+  font-size: 1.6rem;
 }
 .tab:hover {
   background: linear-gradient(to bottom, #013556 5%, #7892c2 100%);
@@ -86,8 +94,19 @@ main {
   top: 1px;
 }
 
-h1 {
-  margin: 0;
+.hero-container {
+  width: 50rem;
+  height: 22rem;
+  background-color: white;
+  opacity: 0.5;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.hero-title {
+  font-style: italic;
 }
 
 /* menu section */

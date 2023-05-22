@@ -112,16 +112,14 @@ function loadMenu() {
       // slide.appendChild(foods[count])
       //if current index passes last photo in array
       count = 0
-      //set index back to zero
     }
-    // slide = foods[count]
+
     slide.appendChild(foods[count])
-    //set slide to current index
   }
   previousLogo.onclick = () => {
-    count--
     if (count >= 0) {
       slide.appendChild(foods[count])
+      count--
     }
   }
 }
