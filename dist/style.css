@@ -56,6 +56,11 @@ body {
   justify-content: end;
   width: 100%;
   height: 2.5rem;
+  color: rgb(184, 184, 184);
+}
+.fa-github {
+  padding: 2px;
+  color: rgb(184, 184, 184);
 }
 
 #nav {
@@ -63,6 +68,7 @@ body {
   padding: 1rem;
   margin-bottom: 2rem;
   border-top: solid 0.5px rgb(83, 78, 78);
+  height: 5rem;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -86,8 +92,8 @@ main {
   font-size: 1.6rem;
 }
 .tab:hover {
-  background: linear-gradient(to bottom, #013556 5%, #7892c2 100%);
-  background-color: #013556;
+  border-bottom: 0.5px solid rgb(83, 78, 78);
+  border-top: 0.5px solid rgb(83, 78, 78);
 }
 .tab:active {
   position: relative;
@@ -97,8 +103,13 @@ main {
 .hero-container {
   width: 50rem;
   height: 22rem;
-  background-color: white;
-  opacity: 0.5;
+  position: relative;
+  background: rgb(
+    204,
+    204,
+    204
+  ); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.8);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -125,29 +136,74 @@ main {
   cursor: pointer;
 }
 
-.menu-details {
-}
-
-.menu-pic {
-  width: 400px;
-}
-
 /* #007800 -- green */
 /* #013656 -- knife handle */
 .slide {
-  overflow: hidden;
-  background-image: url(../src/img/menu\ background\ .jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  width: 40rem;
+  height: 30rem;
 
-.ul-menu {
-  height: 100%;
-  list-style: none;
-  padding: 0;
+  color: black;
+  position: relative;
+  background: rgb(
+    204,
+    204,
+    204
+  ); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.8);
+  border-radius: 5px;
+  overflow: hidden;
   text-align: center;
-  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.menu-container:first-child {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  /* width: 10rem; */
+  border-bottom: 0.5px solid rgb(83, 78, 78);
+}
+
+.menu-title {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.list-container {
+  width: 20rem;
+}
+
+/* contact section */
+.contact-container {
+  width: 40rem;
+  height: 30rem;
+
+  color: black;
+  position: relative;
+  background: rgb(
+    204,
+    204,
+    204
+  ); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.8);
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+iframe {
+  border-radius: 5px;
+}
+.address-details {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
 }
