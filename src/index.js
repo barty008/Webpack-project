@@ -10,12 +10,16 @@ function initialize() {
 initialize()
 
 const main = document.getElementById("main")
+const nav = document.getElementById("nav")
 function navigationEvents() {
   const content = document.getElementById("content")
   const homeBtn = document.getElementById("homebtn")
   const menuBtn = document.getElementById("menubtn")
   const contactBtn = document.getElementById("contactbtn")
   const tabs = document.querySelectorAll(".tab")
+  // mobile
+  const mobileNav = document.querySelector(".fa-bars")
+  mobileNav.addEventListener("click", mobile)
 
   menuBtn.addEventListener("click", loadMenu)
   homeBtn.addEventListener("click", loadHome)
@@ -34,5 +38,10 @@ function flipTheCard() {
   main.classList.add("scale-in-top")
   setTimeout(() => {
     main.classList.remove("scale-in-top")
-  }, 1500)
+  }, 500)
+}
+
+function mobile() {
+  nav.classList.add("scale-in-top")
+  nav.style.display = "flex"
 }

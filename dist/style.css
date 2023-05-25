@@ -74,6 +74,10 @@ body {
   justify-content: space-evenly;
 }
 
+.fa-bars {
+  display: none;
+}
+
 main {
   display: none;
   height: 100%;
@@ -257,5 +261,46 @@ iframe {
     -webkit-transform-origin: 50% 0%;
     transform-origin: 50% 0%;
     opacity: 1;
+  }
+}
+/* media query */
+
+@media (max-width: 800px) {
+  #content {
+    position: absolute;
+    background-image: url(../src/img/mobile\ background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #nav {
+    display: none;
+  }
+
+  .fa-bars {
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 2.5rem;
+  }
+  #main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-container {
+    width: 80%;
+  }
+}
+@media (max-width: 426px) {
+  #content {
+    width: 100vh;
+  }
+
+  #main {
+    width: 400px;
+    font-size: 14px;
   }
 }

@@ -4,6 +4,9 @@ function createHeader(id, text) {
   const logo = document.createElement("h1")
   logo.setAttribute("class", "header-title")
   logo.textContent = text
+  const mobileBtn = document.createElement("i")
+  mobileBtn.setAttribute("class", "fa-solid fa-bars")
+  header.appendChild(mobileBtn)
   header.appendChild(logo)
   return header
 }
@@ -19,6 +22,7 @@ function createBtn(id, text) {
 function navBar(id) {
   const nav = document.createElement("nav")
   nav.setAttribute("id", id)
+  nav.setAttribute("class", "mobile-hidden")
   const homeBtn = createBtn("homebtn", "Home")
   const menuBtn = createBtn("menubtn", "Menu")
   const contactBtn = createBtn("contactbtn", "Contact")
@@ -66,6 +70,7 @@ function pageLoad() {
 
   const header = createHeader("header", "Peels")
   const nav = navBar("nav")
+
   const main = createMain("main")
   main.classList.add("active")
   const mainDescription = heroPicture(
